@@ -1,0 +1,9 @@
+.increase{
+    transition: 0.60;
+    animation: ease-in;
+}
+
+.increase:hover{
+    transform: scale(1.10);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+}
