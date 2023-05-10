@@ -18,27 +18,16 @@ import {Keyring} from '@polkadot/api';
 import {MdContentCopy} from 'react-icons/md';
 
 
-
-
-
 function Newaccounts() {
 
   const toast = useToast()
 
-
-  const [text, setText] = useState('');
   const [copied, setCopied] = useState(false);
-
-
-  const [valueAddress, setValueAddress] = useState('');
-
- 
-
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)
+  const initialRef = React.useRef(null)
+  const finalRef = React.useRef(null)
   
 
 
@@ -46,37 +35,14 @@ function Newaccounts() {
     setCopied(true);
   };
 
-  const keyring = async function main () {
 
-    await waitReady();
-    // Create mnemonic string for Alice using BIP39
-    const mnemonic = mnemonicGenerate();
-  
+  // Insert your code
 
-    setText(mnemonic)
-   
 
-    const mnemonicWords = mnemonic.split(" ");
 
-    // Validate the mnemonic string that was generated
-    const isValidMnemonic = mnemonicValidate(mnemonic);
-  
-    console.log(`isValidMnemonic: ${isValidMnemonic}`);
-  
-    // Create valid Substrate-compatible seed from mnemonic
-    const seed = mnemonicToMiniSecret(mnemonic);
 
-    
-    const keyring = new Keyring({ type: 'sr25519' });
-    const sp = keyring.createFromUri(mnemonic, { name: 'sr25519' });
 
-    setValueAddress(sp.address);
-
-    localStorage.setItem("Publickey",sp.address);
-    console.log(sp.address);
-  
-
-  }
+  //
 
 
     return (
@@ -100,6 +66,7 @@ function Newaccounts() {
         </HStack>
       </div>
       <HStack>
+
       <Button colorScheme='green' borderRadius="20px" onClick={ keyring} className='center' > Generate phrase</Button>
       <Button colorScheme='red' borderRadius="20px" onClick={onOpen} className='center' > Add new account</Button>
       </HStack>
@@ -117,7 +84,6 @@ function Newaccounts() {
               <ModalBody pb={8}>
                 <FormControl mt={6}>
                   <FormLabel>Address: </FormLabel>
-                  <p> {valueAddress}</p>
                 </FormControl>
               </ModalBody>
               <Center>
