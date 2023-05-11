@@ -49,54 +49,12 @@ let word11;
 let word12;
 
   
-  const addkeyring = async function main () {
+  // 1. Insert your code
 
 
-  word1=document.getElementById("1") as HTMLInputElement;
-  word2=document.getElementById("2") as HTMLInputElement;
-  word3=document.getElementById("3") as HTMLInputElement;
-  word4=document.getElementById("4") as HTMLInputElement;
-  word5=document.getElementById("5") as HTMLInputElement;
-  word6=document.getElementById("6") as HTMLInputElement;
-  word7=document.getElementById("7") as HTMLInputElement;
-  word8=document.getElementById("8") as HTMLInputElement;
-  word9=document.getElementById("9") as HTMLInputElement;
-  word10=document.getElementById("10") as HTMLInputElement;
-  word11=document.getElementById("11") as HTMLInputElement;
-  word12=document.getElementById("12") as HTMLInputElement;
 
-  let wordlist= word1.value + " " + word2.value + " " + word3.value + " " + word4.value + " " + word5.value + " " + word6.value + " " + word7.value + " " + word8.value + " " + word9.value + " " + word10.value + " " + word11.value + " " + word12.value
- 
-  console.log(wordlist);
+  //
 
-  const mnemonic=wordlist;
-    
-  // Validate the mnemonic string that was generated
-  const isValidMnemonic = mnemonicValidate(mnemonic);
-  
-  console.log(`isValidMnemonic: ${isValidMnemonic}`);
-  
-  // Create valid Substrate-compatible seed from mnemonic
-  const seed = mnemonicToMiniSecret(mnemonic);
-  
-  // Generate new public/secret keypair for Alice from the supplied seed
-  const { publicKey, secretKey } = ed25519PairFromSeed(seed);
-  const publicKeyHex = Buffer.from(publicKey).toString('hex');
-  const privateKeyHex = Buffer.from(secretKey).toString('hex');
-
-  console.log(publicKeyHex.toString(), privateKeyHex.toString());
-
-  // spirit two cable team panther clap slush rhythm fish brave asthma nominee
-  // publicKey = 5CFhkekD6ssN4A6AJrB8AUmwKhsR3vrx7GC8BGnruj1vdyk5
-
-    const keyring = new Keyring({ type: 'sr25519' });
-    const sp = keyring.createFromUri(mnemonic, { name: 'sr25519' });
-
-
-    setValueAddress(sp.address)
-    localStorage.setItem("Publickey",sp.address)
-   
-  }
 
     return (
   

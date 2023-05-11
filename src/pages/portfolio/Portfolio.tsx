@@ -1,5 +1,5 @@
 import { Heading, Tabs, TabList, TabPanels, Tab, TabPanel, Center, Stack, VStack,Flex  } from '@chakra-ui/react';
-import { GenericCard } from './card';
+import { GenericCard } from './Genericcard';
 
 
 const image='https://s2.coinmarketcap.com/static/img/coins/64x64/5034.png';

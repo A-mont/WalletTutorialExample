@@ -20,36 +20,41 @@ import {
     Center,
     VStack,
   } from '@chakra-ui/react'
-import { ApiPromise, WsProvider} from '@polkadot/api';
-import { web3Accounts,web3Enable, web3FromSource } from '@polkadot/extension-dapp';
+
+// 1. Import the necessary components.
+
+//
 
 
 
 function Send({wsEndpoint, token}) {
 
+
+    // 2. Create an instance of the Polkadot network provider
+
+   //
+
+
+    // 3. Add the necessary states.
+
+   //
+
+
     const toast = useToast()
 
-  const [valueAmount, setValueAmount] = useState('');
-
-  const handleChangeAmount = (event:any) => {
+    const handleChangeAmount = (event:any) => {
     setValueAmount(event.target.value);
   }
 
-  const [valueAddress, setValueAddress] = useState('');
-
-  const handleChangeAddress = (event:any) => {
+    const handleChangeAddress = (event:any) => {
     setValueAddress(event.target.value);
   }
 
-  const [status, setStatus] = useState('');
-
-  const handleStatus = (event:any) => {
+    const handleStatus = (event:any) => {
     setStatus(event.target.value);
   }
 
-  const [blockhash, setBlockhash] = useState('');
-
-  const handleblockhash = (event:any) => {
+    const handleblockhash = (event:any) => {
     setBlockhash(event.target.value);
   }
   
