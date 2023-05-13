@@ -22,8 +22,7 @@ import {
   } from '@chakra-ui/react'
 
 // 1. Import library components
-import { ApiPromise, WsProvider} from '@polkadot/api';
-import { web3Accounts,web3Enable, web3FromSource } from '@polkadot/extension-dapp';
+
 
 //
 
@@ -34,97 +33,19 @@ function Transfer({wsEndpoint, token}) {
 
     // 2. Create states in React.
 
-        // Create a state for the amount to be transferred
-        const [valueAmount, setValueAmount] = useState('');
-
-        // Create a state for the address
-        const [valueAddress, setValueAddress] = useState('');
-    
-       // Create a state for the status transaction
-        const [status, setStatus] = useState('');
-    
-         // Create a state for the blockhash
-        const [blockhash, setBlockhash] = useState('');
+        
 
    //
 
 
     // 3. Create an instance.
 
-      // Create an instance of the Polkadot network provider
-       const wsProvider = new WsProvider(wsEndpoint);
-
+     
    //
 
    // 4. Add Transfer function.
 
    
-const transfer = async function main () {
-
-  // Enable connection to the extension
-  await web3Enable('my wallet');
-
- // Known account we want to use on Polkadot extension
- const allAccounts = await web3Accounts();
-
- // Get the first visible account of the polkadot extension.
- const account = allAccounts[0];
-
- // Store the public key in local storage.
- localStorage.setItem("Publickey",account.address); 
-
- // Get the public key in local storage.
- const addressaccount:any=localStorage.getItem("Publickey");
-     
- // Create an instance of the Polkadot JS API    
- const api = await ApiPromise.create({ provider: wsProvider });
- 
- // Create a transfer extrinsic 
- const transferExtrinsic = api.tx.balances.transfer(valueAddress, Number(valueAmount)*1000000000000)
- 
-// Reset States
- setValueAmount('')
- setValueAddress('')
- 
- // to be able to retrieve the signer interface from this account
- // we can use web3FromSource which will return an InjectedExtension type
- const injector = await web3FromSource(account.meta.source);
-      
- // passing the injected account address as the first argument of signAndSend
- // will allow the api to retrieve the signer and the user will see the extension
- // popup asking to sign the balance transfer transaction
- transferExtrinsic.signAndSend(addressaccount, { signer: injector.signer }, ({ status }) => {
- if (status.isInBlock) {
-     console.log(`Completed at block hash #${status.asInBlock.toString()}`);
-     setBlockhash(status.asInBlock.toString())
- } else {
-     console.log(`Current status: ${status.type}`);
- 
-     setStatus(status.type)
- 
-     if (status.type==='Finalized'){
-   toast({
-   title: 'Successful Transaction',
-   duration: 3000,
-   status: 'success',
-   isClosable: true,
- })
-
- ReactDOM.render(
-  <ChakraProvider>
-    <App />
-  </ChakraProvider>,
-  document.getElementById('root')
-);
-
-onClose()
- }
- }
- }).catch((error: any) => {
- console.log(':( transaction failed', error);
- });
-
-  };
 
    //
 

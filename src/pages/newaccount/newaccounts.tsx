@@ -11,9 +11,8 @@ import {
 import {MdContentCopy} from 'react-icons/md';
 import { AddAccountModal } from '../../components/Body/AddAccountModal';
 // 1. Import library components
-import {Keyring} from '@polkadot/api'; 
-import {mnemonicGenerate} from '@polkadot/util-crypto';
-import { waitReady } from '@polkadot/wasm-crypto';
+
+
 
 //
 
@@ -29,43 +28,13 @@ function Newaccounts() {
 
   // 2. Create states in React
 
-       // We create a new states
-  const [text, setText] = useState('');
-   
-  const [valueAddress, setValueAddress] = useState('');
-
+    
   //
 
 
   // 3. Add a keyring function
 
-        
-    // We add a new function
-    const keyring = async function main () {
-      
-      // We wait for connection.
-      await waitReady();
-   
-      // Create mnemonic string
-      const mnemonic = mnemonicGenerate();
-   
-      // Update state
-      setText(mnemonic)
      
-      // We create a new keychain type Sr25519
-      const keyring = new Keyring({ type: 'sr25519' });
-   
-      // We added seed phrase to the new keyring.
-      const keys = keyring.createFromUri(mnemonic, { name: 'sr25519' });
-   
-      //Update state
-      setValueAddress(keys.address);
-   
-      //We store the public key in local storage.
-      localStorage.setItem("Publickey",keys.address); 
-      
-   }
-
   //
 
     return (
