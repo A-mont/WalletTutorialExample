@@ -1,13 +1,11 @@
-
-import {Header, Main, Footer} from './components';
-
+import { Header, Main, Footer } from "./components";
 
 export const App = () => {
   return (
     <>
-    <Header/>
-    <Main/> 
-    <Footer/>
+      <Header />
+      <Main />
+      <Footer />
     </>
   );
 };

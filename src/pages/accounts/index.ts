@@ -1,3 +1,3 @@
 import { Accounts } from "./accounts";
 
-export {Accounts };
+export { Accounts };

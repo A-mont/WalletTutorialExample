@@ -1,9 +1,9 @@
-.increase{
-    transition: 0.60;
-    animation: ease-in;
+.increase {
+  transition: 0.6;
+  animation: ease-in;
 }
 
-.increase:hover{
-    transform: scale(1.10);
-    box-shadow: 0px 0px 0px 0px;
+.increase:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 0px 0px;
 }
