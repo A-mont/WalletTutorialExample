@@ -1,3 +1,3 @@
-import {Main } from './Body';
+import { Main } from "./Body";
 
-export {Main };
+export { Main };

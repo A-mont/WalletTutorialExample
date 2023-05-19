@@ -1,3 +1,3 @@
-import { Addaccounts} from "./Addaccounts";
+import { Addaccounts } from "./Addaccounts";
 
-export {Addaccounts };
+export { Addaccounts };

@@ -1,19 +1,18 @@
-.increaseshadow{
-    transition: 0.60;
-    animation: ease-in;
+.increaseshadow {
+  transition: 0.6;
+  animation: ease-in;
 }
 
-.increaseshadow:hover{
-    transform: scale(1.10);
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+.increaseshadow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-
-.increase{
-    transition: 0.60;
-    animation: ease-in;
+.increase {
+  transition: 0.6;
+  animation: ease-in;
 }
 
-.increase:hover{
-    transform: scale(1.10);
+.increase:hover {
+  transform: scale(1.1);
 }

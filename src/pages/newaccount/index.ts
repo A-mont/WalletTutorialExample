@@ -1,3 +1,3 @@
 import { Newaccounts } from "./Newaccounts";
 
-export {Newaccounts };
+export { Newaccounts };
